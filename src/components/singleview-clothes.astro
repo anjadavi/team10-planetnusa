@@ -1,0 +1,49 @@
+---
+
+---
+
+<div class="carousel-container">
+  <h3>You may also like</h3>
+  <div class="carousel">
+    <img class="image" src="/test.jpg" alt="Image 1" />
+    <img class="image" src="/test.jpg" alt="Image 2" />
+    <img class="image" src="/test.jpg" alt="Image 3" />
+  </div>
+</div>
+
+<style>
+  main {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  .carousel-container {
+    width: 135vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  .carousel {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .image {
+    flex-shrink: 0;
+    width: 80vw;
+    max-width: 280px;
+    scroll-snap-align: start;
+    object-fit: cover;
+  }
+</style>
