@@ -1,5 +1,141 @@
 
-body {
-    margin: 0;
-    padding: 0;
+.product-page {
+  display: flex;
+  gap: 3rem;
+  padding: 2rem;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.product-gallery {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 50%;
+}
+
+.thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.thumb {
+  width: 80px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+.main-image {
+  width: 100%;
+  max-width: 400px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+.product-info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+.description-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0;
+}
+
+.description-list li {
+  margin-bottom: 0.5rem;
+}
+
+.sizes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sizes label {
+  font-weight: 600;
+}
+
+.sizes select {
+  padding: 0.5rem;
+  border-radius: 20px;
+  border: 1px solid #000;
+  width: 140px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.add-to-bag {
+  background-color: white;
+  border-radius: 1px solid #000;
+  padding: 1rem 2rem;
+  color: black;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  width: fit-content;
+  width: 441px;
+}
+
+
+@media (max-width: 767px) {
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
+
+  .information-section {
+    margin: 2rem;
+  }
+
+  .size_section {
+    padding: 2rem;
+  }
+
+  .size {
+    display: flex;
+    border-radius: 20px;
+    border: 1px solid #000;
+    width: 141px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+
+  .button-wrapper {
+    width: 100%;
+  }
+
+  .add-to-bag {
+    background-color: white;
+    padding: 1rem;
+    width: 80%;
+    max-width: 463px;
+    border: 1px solid #000;
+  }
+
+  .description-wrapper {
+    display: flex;
+    max-width: 463px;
+    width: 90%;
+    text-align: center;
+    flex-direction: column;
+    margin: 3rem auto;
+  }
+}
+
+
+
+
+
+

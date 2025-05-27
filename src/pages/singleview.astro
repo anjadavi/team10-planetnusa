@@ -1,55 +1,58 @@
 ---
 import SingleviewCommunity from "../components/singleview-community.astro";
 import SingleviewClothes from "../components/singleview-clothes.astro";
+import "../styles/singleview.css";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="stylesheet" href="/singleview.css" />
-    <title>Singleview</title>
-  </head>
-  <body>
-    <main>
-      <div>
-        <img src="/test.jpg" alt="image" />
-      </div>
-      <h1>ZIP1 HOODIE</h1>
-      <p>600 DKK</p>
+<main class="product-page">
+  <div class="product-gallery">
+    <img src="/test.jpg" alt="ZIP1 HOODIE" class="main-image" />
+    <div class="thumbnails">
+      <img src="/test.jpg" alt="ZIP1 HOODIE" class="thumb" />
+      <img src="/test.jpg" alt="ZIP1 HOODIE" class="thumb" />
+      <img src="/test.jpg" alt="ZIP1 HOODIE" class="thumb" />
+    </div>
+  </div>
 
-      <div class="size_section">
-        <select class="size" id="size" name="size">
-          <option value="">Size</option>
-          <option value="xxs">XXS</option>
-          <option value="xs">XS</option>
-          <option value="s">S</option>
-          <option value="m">M</option>
-          <option value="l">L</option>
-          <option value="xl">XL</option>
-          <option value="xxl">XXL</option>
-        </select>
-      </div>
+  <div class="product-info">
+    <h1>ZIP1 HOODIE</h1>
+    <p class="price">600 DKK</p>
 
-      <button class="add-to-bag">Add to Bag</button>
-
-      <h4>Description</h4>
-      <p>
+    <ul class="description-list">
+      <li>
         Your prayers have been heard! 💫 We give you our hoodie in chocolate
-        brown 🍫 The perfect Zip1 Hoodie might just be what you've been waiting
-        for! We love it already! 🤎 It's a piece you'll love for sure - to us
-        it's the ultimate tracksuit when it's paired with Vibe1 Pants in the
-        same dreamy chocolate brown
-      </p>
+        brown 🍫
+      </li>
+      <li>
+        The perfect Zip1 Hoodie might just be what you've been waiting for! We
+        love it already! 🤎
+      </li>
+      <li>
+        It's the ultimate tracksuit when paired with Vibe1 Pants in the same
+        dreamy chocolate brown.
+      </li>
+    </ul>
 
-      <SingleviewCommunity />
+    <div class="sizes">
+      <label for="size">Size:</label>
+      <select id="size" name="size">
+        <option value="xxs">XXS</option>
+        <option value="xs">XS</option>
+        <option value="s">S</option>
+        <option value="m">M</option>
+        <option value="l">L</option>
+        <option value="xl">XL</option>
+        <option value="xxl">XXL</option>
+      </select>
+    </div>
 
-      <SingleviewClothes />
-    </main>
-  </body>
-</html>
+    <button class="add-to-bag">Add to Bag</button>
+  </div>
+</main>
+
+<!-- <SingleviewCommunity />
+
+  <SingleviewClothes /> -->
 
 <script type="module">
   const select = document.getElementById("size");
