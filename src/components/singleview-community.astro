@@ -4,25 +4,64 @@
 
 <div class="carousel-container">
   <h3>Our community</h3>
-  <div class="carousel">
-    <img class="image" src="/test.jpg" alt="Image 1" />
-    <!-- <img class="image" src="/test.jpg" alt="Image 2" />
-    <img class="image" src="/test.jpg" alt="Image 3" /> -->
+  <div class="carousel-wrapper">
+    <button class="carousel-btn left" aria-label="Scroll left">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="30"
+        viewBox="0 0 32 30"
+        fill="none"
+      >
+        <ellipse cx="16" cy="15" rx="16" ry="15" fill="white"></ellipse>
+        <path
+          d="M7.29289 14.2929C6.90237 14.6834 6.90237 15.3166 7.29289 15.7071L13.6569 22.0711C14.0474 22.4616 14.6805 22.4616 15.0711 22.0711C15.4616 21.6805 15.4616 21.0474 15.0711 20.6569L9.41421 15L15.0711 9.34315C15.4616 8.95262 15.4616 8.31946 15.0711 7.92893C14.6805 7.53841 14.0474 7.53841 13.6569 7.92893L7.29289 14.2929ZM24 15V14L8 14V15V16L24 16V15Z"
+          fill="black"></path>
+      </svg>
+    </button>
+    <div class="carousel">
+      <img class="image" src="/test.jpg" alt="Image 1" />
+      <img class="image" src="/test.jpg" alt="Image 2" />
+      <img class="image" src="/test.jpg" alt="Image 3" />
+      <img class="image" src="/test.jpg" alt="Image 4" />
+      <img class="image" src="/test.jpg" alt="Image 5" />
+      <img class="image" src="/test.jpg" alt="Image 6" />
+    </div>
+    <button class="carousel-btn right" aria-label="Scroll right">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="30"
+        viewBox="0 0 32 30"
+        fill="none"
+      >
+        <ellipse cx="16" cy="15" rx="16" ry="15" fill="white"></ellipse>
+        <path
+          d="M23.7071 15.7071C24.0976 15.3166 24.0976 14.6834 23.7071 14.2929L17.3431 7.92893C16.9526 7.53841 16.3195 7.53841 15.9289 7.92893C15.5384 8.31946 15.5384 8.95262 15.9289 9.34315L21.5858 15L15.9289 20.6569C15.5384 21.0474 15.5384 21.6805 15.9289 22.0711C16.3195 22.4616 16.9526 22.4616 17.3431 22.0711L23.7071 15.7071ZM7 15V16L23 16V15V14L7 14V15Z"
+          fill="black"></path>
+      </svg>
+    </button>
   </div>
 </div>
 
 <style>
-  main {
-    max-width: 768px;
-    margin: 0 auto;
-    padding: 1rem;
+  .carousel-container {
+    width: 100%;
+    overflow: hidden;
+    margin: 2rem auto;
+    padding: 0;
   }
 
-  .carousel-container {
-    width: 135vw;
-    overflow-x: hidden;
-    margin: 2rem;
-    padding: 0;
+  .carousel-container h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
   }
 
   .carousel {
@@ -31,8 +70,8 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0 1rem;
+    scroll-behavior: smooth;
   }
 
   .carousel::-webkit-scrollbar {
@@ -40,10 +79,54 @@
   }
 
   .image {
+    width: 624px;
+    height: 628px;
     flex-shrink: 0;
-    width: 80vw;
-    max-width: 280px;
+    aspect-ratio: 177/179;
     scroll-snap-align: start;
     object-fit: cover;
   }
+
+  /* Buttons */
+  .carousel-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    display: none;
+  }
+
+  .carousel-btn.left {
+    left: 0.5rem;
+  }
+
+  .carousel-btn.right {
+    right: 0.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .carousel-btn {
+      display: block;
+    }
+  }
 </style>
+
+<script>
+  const carousel = document.querySelector(".carousel");
+  const btnLeft = document.querySelector(".carousel-btn.left");
+  const btnRight = document.querySelector(".carousel-btn.right");
+
+  if (carousel && btnLeft && btnRight) {
+    btnLeft.addEventListener("click", () => {
+      carousel.scrollBy({ left: -470, behavior: "smooth" });
+    });
+
+    btnRight.addEventListener("click", () => {
+      carousel.scrollBy({ left: 470, behavior: "smooth" });
+    });
+  }
+</script>

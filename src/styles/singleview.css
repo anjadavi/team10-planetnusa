@@ -1,4 +1,6 @@
 
+/* GALLERY */
+
 .product-page {
   display: flex;
   gap: 3rem;
@@ -17,74 +19,126 @@
 .thumbnails {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 }
 
 .thumb {
   width: 80px;
   cursor: pointer;
   border: 1px solid #ccc;
+  margin-top: 2rem;
 }
 
 .main-image {
   width: 100%;
-  max-width: 400px;
+  max-width: 800px;
   object-fit: cover;
   border: 1px solid #ccc;
 }
 
+/* PRICE AND NAME */
+
 .product-info {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Georgia, serif;
+  line-height: 1.6;
 }
 
-.price {
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin: 1rem 0;
+.product-info h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
 }
+
+.product-info .price {
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+/* DESCRIPTION */
 
 .description-list {
   list-style: none;
   padding-left: 0;
-  margin: 1rem 0;
+  margin-top: 30px;
 }
 
 .description-list li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 12px;
 }
+
+/* SIZE */
 
 .sizes {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  margin-bottom: 24px;
 }
 
-.sizes label {
+.size-label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
   font-weight: 600;
 }
 
-.sizes select {
-  padding: 0.5rem;
-  border-radius: 20px;
-  border: 1px solid #000;
-  width: 140px;
-  height: 36px;
-  cursor: pointer;
+.size-options {
+  display: flex;
+  gap: 12px;
 }
 
-.add-to-bag {
-  background-color: white;
-  border-radius: 1px solid #000;
-  padding: 1rem 2rem;
-  color: black;
-  font-weight: bold;
-  font-size: 1.1rem;
+.size-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
   cursor: pointer;
-  margin-top: 2rem;
-  width: fit-content;
-  width: 441px;
+  font-size: 14px;
+  color: #333;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.size-option input[type="radio"] {
+  display: none;
+}
+
+.size-option input[type="radio"]:checked + span {
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+.size-option span {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 42px;
+}
+
+
+/* SHOP */
+
+.add-to-bag {
+  margin: 10px 0;
+  padding: 22px 24px;
+  border: 2px solid #0044C7;
+  background: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.add-to-bag:hover {
+  background: #0044C7;
+  color: white;
+}
+
+.button-section {
+  display: flex;
+  flex-direction: column;
+  gap: none;
 }
 
 

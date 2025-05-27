@@ -18,6 +18,45 @@ import "../styles/singleview.css";
     <h1>ZIP1 HOODIE</h1>
     <p class="price">600 DKK</p>
 
+    <div class="sizes">
+      <label class="size-label">Size</label>
+      <div class="size-options">
+        <label class="size-option">
+          <input type="radio" name="size" value="xxs" checked />
+          <span>XXS</span>
+        </label>
+        <label class="size-option">
+          <input type="radio" name="size" value="xs" />
+          <span>XS</span>
+        </label>
+        <label class="size-option">
+          <input type="radio" name="size" value="s" />
+          <span>S</span>
+        </label>
+        <label class="size-option">
+          <input type="radio" name="size" value="m" />
+          <span>M</span>
+        </label>
+        <label class="size-option">
+          <input type="radio" name="size" value="l" />
+          <span>L</span>
+        </label>
+        <label class="size-option">
+          <input type="radio" name="size" value="xl" />
+          <span>XL</span>
+        </label>
+        <label class="size-option">
+          <input type="radio" name="size" value="xxl" />
+          <span>XXL</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="button-section">
+      <button class="add-to-bag">Add to Bag</button>
+      <button class="add-to-bag">Buy with ShopPay</button>
+    </div>
+
     <ul class="description-list">
       <li>
         Your prayers have been heard! 💫 We give you our hoodie in chocolate
@@ -32,27 +71,12 @@ import "../styles/singleview.css";
         dreamy chocolate brown.
       </li>
     </ul>
-
-    <div class="sizes">
-      <label for="size">Size:</label>
-      <select id="size" name="size">
-        <option value="xxs">XXS</option>
-        <option value="xs">XS</option>
-        <option value="s">S</option>
-        <option value="m">M</option>
-        <option value="l">L</option>
-        <option value="xl">XL</option>
-        <option value="xxl">XXL</option>
-      </select>
-    </div>
-
-    <button class="add-to-bag">Add to Bag</button>
   </div>
 </main>
 
-<!-- <SingleviewCommunity />
+<SingleviewCommunity />
 
-  <SingleviewClothes /> -->
+<SingleviewClothes />
 
 <script type="module">
   const select = document.getElementById("size");
