@@ -16,8 +16,8 @@ import "../styles/singleview.css";
     <img src="/test.jpg" alt="ZIP1 HOODIE" class="main-image" />
     <div class="thumbnails">
       <img src="/test.jpg" alt="ZIP1 HOODIE" class="thumb" />
-      <img src="/test.jpg" alt="ZIP1 HOODIE" class="thumb" />
-      <img src="/test.jpg" alt="ZIP1 HOODIE" class="thumb" />
+      <img src="/test2.jpg" alt="ZIP1 HOODIE" class="thumb" />
+      <img src="/test3.jpg" alt="ZIP1 HOODIE" class="thumb" />
     </div>
   </div>
 
@@ -75,11 +75,30 @@ import "../styles/singleview.css";
 <SingleviewClothes />
 
 <script type="module">
-  const select = document.getElementById("size");
-  const label = document.getElementById("sizeLabel");
+  const sizes = document.querySelectorAll(".size-option");
+  const label = document.querySelector(".size-label");
 
-  select.addEventListener("change", () => {
-    const selectedText = select.options[select.selectedIndex].text;
-    label.textContent = selectedText ? `Size: ${selectedText}` : "Size";
+  sizes.forEach((size) => {
+    size.addEventListener("change", (event) => {
+      const selectedSize = event.target.value;
+      console.log(selectedSize);
+
+      if (selectedSize) {
+        label.textContent = `Size: ${selectedSize}`;
+      } else {
+        label.textContent = "Size";
+      }
+    });
+  });
+
+  const mainImage = document.querySelector(".main-image");
+  const thumbnails = document.querySelectorAll(".thumb");
+
+  thumbnails.forEach((thumb) => {
+    thumb.addEventListener("click", () => {
+      console.log("meow");
+
+      mainImage.src = thumb.src;
+    });
   });
 </script>
