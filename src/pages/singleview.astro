@@ -4,7 +4,13 @@ import SingleviewClothes from "../components/singleview-clothes.astro";
 import "../styles/singleview.css";
 ---
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Singleview</title>
+</head>
 <main class="product-page">
+  <!-- GALLERY -->
   <div class="product-gallery">
     <img src="/test.jpg" alt="ZIP1 HOODIE" class="main-image" />
     <div class="thumbnails">
@@ -14,10 +20,12 @@ import "../styles/singleview.css";
     </div>
   </div>
 
+  <!-- PRICE AND NAME -->
   <div class="product-info">
     <h1>ZIP1 HOODIE</h1>
     <p class="price">600 DKK</p>
 
+    <!-- SIZE -->
     <div class="sizes">
       <label class="size-label">Size</label>
       <div class="size-options">
@@ -52,11 +60,13 @@ import "../styles/singleview.css";
       </div>
     </div>
 
+    <!-- BUTTONS -->
     <div class="button-section">
       <button class="add-to-bag">Add to Bag</button>
       <button class="add-to-bag">Buy with ShopPay</button>
     </div>
 
+    <!-- DESCRIPTION -->
     <ul class="description-list">
       <li>
         Your prayers have been heard! 💫 We give you our hoodie in chocolate

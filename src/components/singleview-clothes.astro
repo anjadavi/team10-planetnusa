@@ -42,4 +42,20 @@
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   }
+
+  @media (max-width: 768px) {
+    .clothes {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .image {
+      max-width: 47%;
+    }
+
+    .clothes .image:nth-child(n + 3) {
+      display: none;
+    }
+  }
 </style>

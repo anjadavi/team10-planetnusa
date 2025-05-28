@@ -26,6 +26,7 @@
       <img class="image" src="/test.jpg" alt="Image 4" />
       <img class="image" src="/test.jpg" alt="Image 5" />
       <img class="image" src="/test.jpg" alt="Image 6" />
+      <img class="image" src="/test.jpg" alt="Image 7" />
     </div>
     <button class="carousel-btn right" aria-label="Scroll right">
       <svg
@@ -108,9 +109,22 @@
     right: 0.5rem;
   }
 
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
+    .carousel {
+      gap: 0.5rem;
+      padding: 0 0.5rem;
+    }
+
+    .image {
+      width: 100%;
+      height: auto;
+      max-width: 50%;
+      aspect-ratio: auto;
+      aspect-ratio: 177/179;
+    }
+
     .carousel-btn {
-      display: block;
+      display: none !important;
     }
   }
 </style>
