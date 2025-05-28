@@ -9,6 +9,7 @@ import "../styles/singleview.css";
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Singleview</title>
 </head>
+
 <main class="product-page">
   <!-- GALLERY -->
   <div class="product-gallery">
@@ -20,50 +21,35 @@ import "../styles/singleview.css";
     </div>
   </div>
 
-  <!-- PRICE AND NAME -->
+  <!-- PRODUCT INFO -->
   <div class="product-info">
     <h1>ZIP1 HOODIE</h1>
     <p class="price">600 DKK</p>
 
-    <!-- SIZE -->
+    <!-- SIZE OPTIONS -->
     <div class="sizes">
       <label class="size-label">Size</label>
       <div class="size-options">
-        <label class="size-option">
-          <input type="radio" name="size" value="xxs" checked />
-          <span>XXS</span>
-        </label>
-        <label class="size-option">
-          <input type="radio" name="size" value="xs" />
-          <span>XS</span>
-        </label>
-        <label class="size-option">
-          <input type="radio" name="size" value="s" />
-          <span>S</span>
-        </label>
-        <label class="size-option">
-          <input type="radio" name="size" value="m" />
-          <span>M</span>
-        </label>
-        <label class="size-option">
-          <input type="radio" name="size" value="l" />
-          <span>L</span>
-        </label>
-        <label class="size-option">
-          <input type="radio" name="size" value="xl" />
-          <span>XL</span>
-        </label>
-        <label class="size-option">
-          <input type="radio" name="size" value="xxl" />
-          <span>XXL</span>
-        </label>
+        {
+          ["xxs", "xs", "s", "m", "l", "xl", "xxl"].map((size, index) => (
+            <label class="size-option">
+              <input
+                type="radio"
+                name="size"
+                value={size}
+                checked={index === 0}
+              />
+              <span>{size.toUpperCase()}</span>
+            </label>
+          ))
+        }
       </div>
     </div>
 
-    <!-- BUTTONS -->
+    <!-- ACTION BUTTONS -->
     <div class="button-section">
       <button class="add-to-bag">Add to Bag</button>
-      <button class="add-to-bag">Buy with ShopPay</button>
+      <button class="shoppay">Buy with ShopPay</button>
     </div>
 
     <!-- DESCRIPTION -->
