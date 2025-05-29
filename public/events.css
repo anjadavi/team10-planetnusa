@@ -1,0 +1,187 @@
+h2 {
+  color: #dde475;
+  font-size: 36px;
+}
+
+h3 {
+  color: #dde475;
+  font-size: 22px;
+}
+
+p {
+  color: #0044c7;
+  font-size: 20px;
+}
+
+.hero-section {
+  background-image: url("/images/nusaruns.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32.5px;
+}
+
+.hero-section-bootcamp {
+  background-image: url("/images/nusabootcamphero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32.5px;
+}
+
+.hero-section-swims {
+  background-image: url("/images/nusaswimshero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32.5px;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  margin-top: 300px;
+}
+
+.gronplanet-events {
+  width: 150px;
+  height: auto;
+  padding-top: 50px;
+  padding-left: 310px;
+}
+
+.billede-events {
+  width: 350px;
+  height: auto;
+  display: block;
+  margin: 75px auto 0 auto;
+}
+
+.h2-events {
+  text-align: center;
+  width: 100%;
+  margin: 30px auto 20px auto;
+}
+
+.p-events {
+  /* text-align: center; */
+  max-width: 350px;
+  margin: 0 auto 20px auto;
+  line-height: 2;
+}
+
+.h3-events {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.linje {
+  display: block;
+  width: 155px;
+  height: auto;
+  margin: 2.5px auto 0 auto;
+}
+
+@media (min-width: 780px) {
+  .hero-section {
+    height: 400px;
+    justify-content: flex-start;
+  }
+
+  .hero-section-bootcamp {
+    height: 400px;
+    justify-content: flex-start;
+  }
+
+  .hero-section-swims {
+    height: 400px;
+    justify-content: flex-start;
+  }
+
+  .hero-content {
+    max-width: 500px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gronplanet-events {
+    position: absolute;
+    bottom: 275px;
+    right: 150px;
+    width: 200px;
+  }
+
+  .div,
+  .reverse {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 40px;
+  }
+
+  .div1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .div2 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .reverse .div1 {
+    grid-column: 2;
+  }
+
+  .reverse .div2 {
+    grid-column: 1;
+  }
+
+  .billede-events {
+    width: 475px;
+    height: auto;
+  }
+
+  .p-events {
+    font-size: 20px;
+    max-width: 600px;
+    /* margin-bottom: 27.5px; */
+  }
+
+  .h2-events {
+    font-size: 36px;
+    text-align: left;
+    width: 100%;
+    margin: 30px auto 20px auto;
+  }
+
+  .h3-events {
+    font-size: 24px;
+    text-align: left;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .linje {
+    display: block;
+    width: 175px;
+    height: auto;
+    margin: 2.5px 0 0 0;
+  }
+}
