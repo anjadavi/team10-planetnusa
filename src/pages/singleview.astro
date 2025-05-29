@@ -1,0 +1,104 @@
+---
+import SingleviewCommunity from "../components/singleview-community.astro";
+import SingleviewClothes from "../components/singleview-clothes.astro";
+import "../styles/singleview.css";
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Singleview</title>
+</head>
+
+<main class="product-page">
+  <!-- GALLERY -->
+  <div class="product-gallery">
+    <img src="/test.jpg" alt="ZIP1 HOODIE" class="main-image" />
+    <div class="thumbnails">
+      <img src="/test.jpg" alt="ZIP1 HOODIE" class="thumb" />
+      <img src="/test2.jpg" alt="ZIP1 HOODIE" class="thumb" />
+      <img src="/test3.jpg" alt="ZIP1 HOODIE" class="thumb" />
+    </div>
+  </div>
+
+  <!-- PRODUCT INFO -->
+  <div class="product-info">
+    <h1>ZIP1 HOODIE</h1>
+    <p class="price">600 DKK</p>
+
+    <!-- SIZE OPTIONS -->
+    <div class="sizes">
+      <label class="size-label">Size</label>
+      <div class="size-options">
+        {
+          ["xxs", "xs", "s", "m", "l", "xl", "xxl"].map((size, index) => (
+            <label class="size-option">
+              <input
+                type="radio"
+                name="size"
+                value={size}
+                checked={index === 0}
+              />
+              <span>{size.toUpperCase()}</span>
+            </label>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- ACTION BUTTONS -->
+    <div class="button-section">
+      <button class="add-to-bag">Add to Bag</button>
+      <button class="shoppay">Buy with ShopPay</button>
+    </div>
+
+    <!-- DESCRIPTION -->
+    <ul class="description-list">
+      <li>
+        Your prayers have been heard! 💫 We give you our hoodie in chocolate
+        brown 🍫
+      </li>
+      <li>
+        The perfect Zip1 Hoodie might just be what you've been waiting for! We
+        love it already! 🤎
+      </li>
+      <li>
+        It's the ultimate tracksuit when paired with Vibe1 Pants in the same
+        dreamy chocolate brown.
+      </li>
+    </ul>
+  </div>
+</main>
+
+<SingleviewCommunity />
+
+<SingleviewClothes />
+
+<script type="module">
+  const sizes = document.querySelectorAll(".size-option");
+  const label = document.querySelector(".size-label");
+
+  sizes.forEach((size) => {
+    size.addEventListener("change", (event) => {
+      const selectedSize = event.target.value;
+      console.log(selectedSize);
+
+      if (selectedSize) {
+        label.textContent = `Size: ${selectedSize}`;
+      } else {
+        label.textContent = "Size";
+      }
+    });
+  });
+
+  const mainImage = document.querySelector(".main-image");
+  const thumbnails = document.querySelectorAll(".thumb");
+
+  thumbnails.forEach((thumb) => {
+    thumb.addEventListener("click", () => {
+      console.log("meow");
+
+      mainImage.src = thumb.src;
+    });
+  });
+</script>
