@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "FuturaPT";
+  src: url("/fonts/FuturaCyrillicLight.ttf") format("truetype");
+  font-weight: 300 399;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FuturaPT";
+  src: url("/fonts/FuturaCyrillicBook.ttf") format("truetype");
+  font-weight: 400 499;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FuturaPT";
+  src: url("/fonts/FuturaCyrillicMedium.ttf") format("truetype");
+  font-weight: 500 599;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FuturaPT";
+  src: url("/fonts/FuturaCyrillicBold.ttf") format("truetype");
+  font-weight: 700 799;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FuturaPT";
+  src: url("/fonts/FuturaCyrillicExtraBold.ttf") format("truetype");
+  font-weight: 800 899;
+  font-style: normal;
+}
+
+body {
+  font-family: "FuturaPT", sans-serif;
+}
+
+h1 {
+  font-family: "FuturaPT", sans-serif;
+  font-size: 40px;
+}
+
+h2 {
+  font-family: "FuturaPT", sans-serif;
+  font-size: 65px;
+}
+
+h3 {
+  font-family: "FuturaPT", sans-serif;
+}
+
+h4 {
+  font-family: "FuturaPT", sans-serif;
+}
+
+p {
+  font-family: "FuturaPT", sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-family: "FuturaPT", sans-serif;
+    font-size: 65px;
+  }
+}
