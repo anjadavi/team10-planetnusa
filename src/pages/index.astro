@@ -2,15 +2,322 @@
 
 ---
 
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+    <link rel="stylesheet" href="/index.css" />
+    <link rel="stylesheet" href="/src/styles/style.css" />
+  </head>
+
+  <body class="homepage">
+    <!-- HEADER -->
+    <header class="site-header">
+      <nav class="site-nav">
+        <div class="nav-left">
+          <img
+            src="/imgs/menu-sort.png"
+            alt="Menu"
+            id="menuToggle"
+            class="burger"
+          />
+          <img src="/images/søg-sort.png" alt="Søg" class="søg-icon" />
+        </div>
+
+        <div class="nav-logo">
+          <a href="/">
+            <img src="/images/logo.png" alt="Planet Nusa Logo" />
+          </a>
+        </div>
+
+        <div class="nav-center">
+          <a href="/marathon">Marathon Week</a>
+          <a href="/listeview">Apparel</a>
+          <a href="/nusabootcamp">Nusa Bootcamp</a>
+          <a href="/nusaruns">Nusa Runs</a>
+          <a href="/nusaswims">Nusa Swims</a>
+          <a href="/nusatalks">Nusa Talks</a>
+        </div>
+
+        <div class="nav-right">
+          <img src="/images/søg-sort.png" alt="Søg" class="søg-desktop" />
+          <img src="/images/profil-sort.png" alt="Profil" />
+          <img src="/images/kurv-sort.png" alt="Kurv" />
+        </div>
+      </nav>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <ul>
+          <li><a href="/marathon">Marathon Week</a></li>
+          <li><a href="/listeview">Apparel</a></li>
+          <li><a href="/nusabootcamp">Nusa Bootcamp</a></li>
+          <li><a href="/nusaruns">Nusa Runs</a></li>
+          <li><a href="/nusaswims">Nusa Swims</a></li>
+          <li><a href="/nusatalks">Nusa Talks</a></li>
+        </ul>
+      </div>
+
+      <script is:inline>
+        setTimeout(() => {
+          const toggle = document.getElementById("menuToggle");
+          const menu = document.getElementById("mobileMenu");
+
+          if (toggle && menu) {
+            toggle.addEventListener("click", () => {
+              menu.classList.toggle("open");
+            });
+          }
+        }, 0);
+      </script>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <article>
+        <section class="hero-section">
+          <div class="hero-content">
+            <img
+              class="hero-image"
+              src="/images/forsidebillede.jpg"
+              alt="forsidebillede"
+            />
+            <h1 class="h1-forside">COMMUNITY<br />EVENTS</h1>
+          </div>
+        </section>
+        <div>
+          <p class="p-forside">
+            At Planet Nusa, we’re more than just a sportswear brand; we’re a
+            community fueled by a passion for sports & the endorphin rush that
+            comes with it. Join us in cities across the globe for activities
+            like running, swimming, yoga, fitness, bootcamps, Nusa Talks, sauna
+            sessions, and much more. Whether you’re a fitness enthusiast or just
+            getting started, we can’t wait to meet you & sweat it out
+            together. Welcome to Planet Nusa!
+          </p>
+        </div>
+      </article>
+
+      <section class="marathon-section">
+        <h1 class="h1-marathon">MARATHON WEEK</h1>
+        <h4 class="h4-marathon">
+          Running, Music & Mindfulness. Free for everyone to join!
+        </h4>
+        <div class="karrusel-wrapper">
+          <button class="pil-scroll-left">
+            <img src="/images/pil.png" alt="scroll left" />
+          </button>
+          <div class="karrusel-marathon">
+            <img src="/images/karrusel1.jpg" alt="karrusel1" />
+            <img src="/images/karrusel2.jpg" alt="karrusel2" />
+            <img src="/images/karrusel3.jpg" alt="karrusel3" />
+            <img src="/images/karrusel4.jpg" alt="karrusel4" />
+            <img src="/images/karrusel5.jpg" alt="karrusel5" />
+          </div>
+          <button class="pil-scroll">
+            <img src="/images/pil.png" alt="scroll right" />
+          </button>
+        </div>
+        <a class="knap-marathon" href="marathon">SEE THE PROGRAM</a>
+      </section>
+
+      <section>
+        <div class="linje-events">
+          <img
+            class="gronplanet-events"
+            src="/images/gronplanet.png"
+            alt="grøn planet"
+          />
+          <h1 class="h1-events">EVENTS</h1>
+        </div>
+        <h4 class="h4-events">
+          Join the Fun – Planet NUSA Events Are for Everyone!
+        </h4>
+      </section>
+
+      <section class="events-section">
+        <div class="div">
+          <div class="div1">
+            <img
+              class="billede-events"
+              src="/images/nusabootcamp.png"
+              alt="nusa bootcamp"
+            />
+          </div>
+          <div class="div2">
+            <p class="p-events">
+              Community is at the heart of our bootcamps. Join us in a city near
+              you for high-energy, group-driven workouts that will leave you
+              feeling strong and motivated. We can’t wait to sweat it out
+              together!
+            </p>
+            <a class="knap-events" href="nusabootcamp">READ MORE</a>
+          </div>
+        </div>
+
+        <div class="div reverse">
+          <div class="div1">
+            <img
+              class="billede-events"
+              src="/images/nusaruns.png"
+              alt="nusa runs"
+            />
+          </div>
+          <div class="div2">
+            <p class="p-events">
+              Join our Nusa Runs, happening weekly & monthly! We cover various
+              distances, always at a social pace, so everyone can keep up and
+              chat along the way. Find us in Copenhagen, Aarhus, Aalborg, Odense
+              & NYC
+            </p>
+            <a class="knap-events" href="nusaruns">READ MORE</a>
+          </div>
+        </div>
+
+        <div class="div">
+          <div class="div1">
+            <img
+              class="billede-events"
+              src="/images/nusaswims.png"
+              alt="nusa swims"
+            />
+          </div>
+          <div class="div2">
+            <p class="p-events">
+              Take a dip, splash, or swim with us & start your day refreshed.
+              Release those feel-good endorphins while enjoying good company.
+              Don’t forget your swimwear, towel & warm clothes for before &
+              after.
+            </p>
+            <a class="knap-events" href="nusaswims">READ MORE</a>
+          </div>
+        </div>
+
+        <div class="div reverse">
+          <div class="div1">
+            <img
+              class="billede-events"
+              src="/images/nusatalks.png"
+              alt="nusa talks"
+            />
+          </div>
+          <div class="div2">
+            <p class="p-events">
+              Nusa Talks is your go-to space for engaging conversations about
+              wellness, mental health, fitness & nutrition. These monthly talks
+              explore a variety of topics designed to uplift & inspire our
+              community. Stay tuned for upcoming talks!
+            </p>
+            <a class="knap-events" href="nusatalks">READ MORE</a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="h2-community">Our community</h2>
+        <div class="karrusel-wrapper">
+          <button class="pil-scroll-left-community">
+            <img src="/images/pil.png" alt="scroll left" />
+          </button>
+          <div class="karrusel-community">
+            <img src="/images/karrusel6.jpg" alt="karrusel6" />
+            <img src="/images/karrusel7.jpg" alt="karrusel7" />
+            <img src="/images/karrusel8.jpg" alt="karrusel8" />
+            <img src="/images/karrusel9.jpg" alt="karrusel9" />
+            <img src="/images/karrusel10.jpg" alt="karrusel10" />
+            <img src="/images/karrusel11.jpg" alt="karrusel11" />
+          </div>
+          <button class="pil-scroll-community">
+            <img src="/images/pil.png" alt="scroll left" />
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-wrapper">
+      <div class="footer-content">
+        <div class="footer-top">
+          <h2>
+            Community Driven Sportswear
+            <img src="/images/planet-sort.png" alt="planet" />
+          </h2>
+
+          <section class="footer-grid">
+            <div class="footer-left">
+              <h3>Don't Ever Miss Out</h3>
+              <p>
+                Be the first to know about new drops and special offers. Sign up
+                here and get 10% off your first order!
+              </p>
+              <input type="email" placeholder="email@newsletter.com" />
+              <br />
+              <select>
+                <option>Select your country</option>
+                <option>Canada</option>
+                <option>Denmark</option>
+                <option>France</option>
+                <option>Germany</option>
+                <option>Japan</option>
+                <option>Netherlands</option>
+                <option>Singapore</option>
+                <option>South Korea</option>
+                <option>Sweden</option>
+                <option>Switzerland</option>
+              </select>
+            </div>
+
+            <div class="footer-right">
+              <div class="footer-links">
+                <div>
+                  <h4>Marathon Week</h4>
+                  <ul>
+                    <li><a href="/marathon">Breathwork & Bubbles</a></li>
+                    <li><a href="/marathon">Nusa run + DJ Loadi</a></li>
+                    <li><a href="/marathon">Shake out run</a></li>
+                    <li><a href="/marathon">Nusa cheer zone</a></li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4>Apparel</h4>
+                  <ul>
+                    <li><a href="/listeview">Women</a></li>
+                    <li><a href="/listeview">Men</a></li>
+                    <li><a href="/listeview">Unisex</a></li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4>Events</h4>
+                  <ul>
+                    <li><a href="/nusabootcamp">Nusa Bootcamp</a></li>
+                    <li><a href="/nusaruns">Nusa Runs</a></li>
+                    <li><a href="/nusaswims">Nusa Swims</a></li>
+                    <li><a href="/nusatalks">Nusa Talks</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="socials">
+            <a href="#"
+              ><img src="/images/facebook-sort.png" alt="Facebook"
+            /></a>
+            <a href="#"
+              ><img src="/images/instagram-sort.png" alt="Instagram"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/scroll.js" type="module"></script>
+  </body>
 </html>

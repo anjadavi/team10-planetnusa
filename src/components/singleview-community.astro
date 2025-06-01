@@ -1,0 +1,136 @@
+<section>
+  <h2 class="h2-community">Our community</h2>
+  <div class="karrusel-wrapper">
+    <button class="pil-scroll-left-community">
+      <img src="/images/pil.png" alt="scroll left" />
+    </button>
+    <div class="karrusel-community">
+      <img src="/images/karrusel6.jpg" alt="karrusel6" />
+      <img src="/images/karrusel7.jpg" alt="karrusel7" />
+      <img src="/images/karrusel8.jpg" alt="karrusel8" />
+      <img src="/images/karrusel9.jpg" alt="karrusel9" />
+      <img src="/images/karrusel10.jpg" alt="karrusel10" />
+      <img src="/images/karrusel11.jpg" alt="karrusel11" />
+    </div>
+    <button class="pil-scroll-community">
+      <img src="/images/pil.png" alt="scroll left" />
+    </button>
+  </div>
+</section>
+
+<style>
+/* community */
+.karrusel-wrapper {
+  position: relative; /* Dette er altafgørende */
+}
+
+.h2-community {
+  text-align: center;
+  margin: 0 auto;
+  width: fit-content;
+  font-size: 40px;
+}
+  }
+
+  .karrusel-community {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 10px;
+    padding-bottom: 40px;
+  }
+
+  .karrusel-community::-webkit-scrollbar {
+    display: none;
+  }
+
+  .karrusel-community img {
+    flex: 0 0 auto;
+    width: 250px;
+    height: auto;
+    scroll-snap-align: center;
+  }
+
+  .pil-scroll-community {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .pil-scroll-left-community {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    background: none;
+    border: none;
+    padding: 0;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .pil-scroll-community img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .pil-scroll-left-community img {
+    width: 30px;
+    height: 30px;
+  }
+
+  @media (min-width: 780px) {
+  /* community */
+  .h2-community {
+    font-size: 40px;
+    margin-top: 120px;
+    margin-bottom: 20px;
+  }
+}
+
+    .karrusel-community img {
+      width: 350px;
+      height: auto;
+    }
+
+    .pil-scroll-community {
+      right: 25px;
+    }
+
+    .pil-scroll-left-community {
+      left: 25px;
+    }
+
+    .pil-scroll-community img {
+      width: 35px;
+      height: 35px;
+    }
+
+    .pil-scroll-left-community img {
+      width: 35px;
+      height: 35px;
+    }
+  }
+</style>
+
+<script type="module">
+  const community = document.querySelector(".karrusel-community");
+  document
+    .querySelector(".pil-scroll-community")
+    .addEventListener("click", () => {
+      community.scrollBy({ left: 300, behavior: "smooth" });
+    });
+  document
+    .querySelector(".pil-scroll-left-community")
+    .addEventListener("click", () => {
+      community.scrollBy({ left: -300, behavior: "smooth" });
+    });
+</script>

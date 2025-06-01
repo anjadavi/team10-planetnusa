@@ -1,0 +1,407 @@
+body {
+  background-color: #0044c7;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+section {
+  padding-bottom: 5px;
+}
+
+h1 {
+  font-size: 50px;
+  color: #ffffff;
+}
+
+h2 {
+  color: #ffffff;
+  /* font-size: 36px; */
+}
+
+h4 {
+  font-size: 15px;
+  color: #ffffff;
+}
+
+p {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+/* Index Header&Footer */
+body.homepage .footer-wrapper img,
+body.homepage .site-header img {
+  filter: brightness(0) invert(1) !important;
+}
+
+body.homepage .footer-wrapper,
+body.homepage .footer-bottom {
+  border-top: 1px solid white !important;
+}
+
+body.homepage .footer-wrapper p,
+body.homepage .footer-wrapper a,
+body.homepage .site-nav a {
+  color: white !important;
+}
+
+body.homepage input[type="email"],
+body.homepage select {
+  border-color: white !important;
+  color: white !important;
+  background-color: transparent !important;
+}
+
+/* hero */
+.hero-section {
+  background-image: url("/images/forsidebillede.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32.5px;
+  position: relative;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.hero-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 300px;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.h1-forside {
+  position: absolute;
+  top: 120px;
+  left: 10px;
+  color: white;
+  font-size: 48px;
+  font-family: "FuturaPT", sans-serif;
+  z-index: 2;
+  line-height: 1;
+}
+
+.gronplanet-forside {
+  display: none;
+  width: 90px;
+  height: auto;
+  padding-top: 50px;
+}
+
+.p-forside {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 30px;
+  color: white;
+  max-width: 90%;
+  margin-top: 65px;
+  margin-bottom: 50px;
+  margin-left: 30px;
+  margin-right: 80px;
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+
+/* marathon week */
+.marathon-section {
+  background-image: url("/images/strava.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.h1-marathon {
+  color: #fd9f28;
+  text-align: center;
+  margin: 0 -20px 5px -20px;
+  font-size: 100px;
+}
+
+.h4-marathon {
+  text-align: center;
+  margin: 0 auto 20px auto;
+  padding: 0;
+  font-size: 20px;
+}
+
+.karrusel-wrapper {
+  position: relative;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.karrusel-marathon {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  gap: 10px;
+  padding-bottom: 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.karrusel-marathon::-webkit-scrollbar {
+  display: none;
+}
+
+.karrusel-marathon img {
+  flex: 0 0 auto;
+  width: 500px;
+  height: auto;
+  scroll-snap-align: center;
+}
+
+.pil-scroll,
+.pil-scroll-left {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.pil-scroll {
+  right: 25px;
+}
+
+.pil-scroll-left {
+  left: 25px;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.pil-scroll img,
+.pil-scroll-left img {
+  width: 35px;
+  height: 35px;
+}
+
+.knap-marathon {
+  background-color: #fd9f28;
+  color: #ffffff;
+  font-size: 24px;
+  text-decoration: none;
+  border: none;
+  padding: 17.5px 112.5px;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+  width: fit-content;
+  transition: background-color 0.3s ease;
+}
+
+.knap-marathon:hover {
+  background-color: #ffffff;
+  color: #fd9f28;
+}
+
+/* events */
+.linje-events {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px auto 0 auto;
+  gap: 0;
+}
+
+.h1-events {
+  color: #dde475;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 100px;
+}
+
+.gronplanet-events {
+  position: absolute;
+  left: calc(50% - 190px);
+  transform: translateX(-100%);
+  width: 200px;
+  height: auto;
+}
+
+.h4-events {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.billede-events {
+  width: 475px;
+  height: auto;
+  display: block;
+  margin: 40px auto 0 auto;
+}
+
+.div,
+.reverse {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.div1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.div2 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.reverse .div1 {
+  grid-column: 2;
+}
+
+.reverse .div2 {
+  grid-column: 1;
+}
+
+.p-events {
+  font-size: 22.5px;
+  max-width: 600px;
+  margin: 20px auto;
+  line-height: 2;
+}
+
+.knap-events {
+  background-color: #dde475;
+  color: #0044c7;
+  font-size: 24px;
+  text-decoration: none;
+  border: none;
+  padding: 17.5px 132.5px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 10px 0 0 0;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.knap-events:hover {
+  background-color: #ffffff;
+}
+
+/* community */
+.h2-community {
+  text-align: center;
+  margin: 120px auto 20px auto;
+  width: fit-content;
+  font-size: 40px;
+}
+
+.karrusel-community {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  gap: 10px;
+  padding-bottom: 40px;
+}
+
+.karrusel-community::-webkit-scrollbar {
+  display: none;
+}
+
+.karrusel-community img {
+  flex: 0 0 auto;
+  width: 350px;
+  height: auto;
+  scroll-snap-align: center;
+}
+
+.pil-scroll-community,
+.pil-scroll-left-community {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.pil-scroll-community {
+  right: 25px;
+}
+
+.pil-scroll-left-community {
+  left: 25px;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.pil-scroll-community img,
+.pil-scroll-left-community img {
+  width: 35px;
+  height: 35px;
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    height: 500px;
+    justify-content: flex-start;
+  }
+
+  .hero-content {
+    max-width: 500px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .h1-forside {
+    margin-top: 420px;
+    left: 40px;
+    font-size: 115px;
+    line-height: 1;
+  }
+
+  .gronplanet-forside {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    width: 150px;
+    height: auto;
+    z-index: 2;
+  }
+
+  .p-forside {
+    font-size: 22.5px;
+    line-height: 2;
+    max-width: 1000px;
+    margin-top: 130px;
+    margin-left: 60px;
+    margin-bottom: 100px;
+    color: white;
+  }
+}
+

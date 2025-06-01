@@ -1,0 +1,100 @@
+---
+
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+    <link rel="stylesheet" href="/marathon.css" />
+    <link rel="stylesheet" href="/listeview.css" />
+    <link rel="stylesheet" href="/src/styles/style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <nav class="site-nav">
+        <div class="nav-left">
+          <img src="/images/menu-sort.png" alt="Menu" id="menuToggle" class="burger" />
+          <img src="/images/søg-sort.png" alt="Søg" class="søg-icon" />
+        </div>
+
+        <div class="nav-logo">
+          <a href="/">
+            <img src="/images/logo.png" alt="Planet Nusa Logo" />
+          </a>
+        </div>
+
+        <div class="nav-center">
+          <a href="/marathon">Marathon Week</a>
+          <a href="/listeview">Apparel</a>
+          <a href="/nusabootcamp">Nusa Bootcamp</a>
+          <a href="/nusaruns">Nusa Runs</a>
+          <a href="/nusaswims">Nusa Swims</a>
+          <a href="/nusatalks">Nusa Talks</a>
+        </div>
+
+        <div class="nav-right">
+          <img src="/images/søg-sort.png" alt="Søg" class="søg-desktop" />
+          <img src="/images/profil-sort.png" alt="Profil" />
+          <img src="/images/kurv-sort.png" alt="Kurv" />
+        </div>
+      </nav>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <ul>
+          <li><a href="/marathon">Marathon Week</a></li>
+          <li><a href="/listeview">Apparel</a></li>
+          <li><a href="/nusabootcamp">Nusa Bootcamp</a></li>
+          <li><a href="/nusaruns">Nusa Runs</a></li>
+          <li><a href="/nusaswims">Nusa Swims</a></li>
+          <li><a href="/nusatalks">Nusa Talks</a></li>
+        </ul>
+      </div>
+
+      <script is:inline>
+        setTimeout(() => {
+          const toggle = document.getElementById("menuToggle");
+          const menu = document.getElementById("mobileMenu");
+
+          if (toggle && menu) {
+            toggle.addEventListener("click", () => {
+              menu.classList.toggle("open");
+            });
+          }
+        }, 0);
+      </script>
+    </header>
+
+    <!-- Hovedindhold placeres her -->
+    <main>
+      <!-- Dit hovedindhold fortsætter her... -->
+    </main>
+
+    <footer class="footer-wrapper">
+      <!-- Dit footerindhold placeres her... -->
+    </footer>
+
+    <!-- JavaScript til karrusellen -->
+    <script type="module">
+      document.addEventListener("DOMContentLoaded", () => {
+        const community = document.querySelector(".karrusel-community");
+        const rightBtn = document.querySelector(".pil-scroll-community");
+        const leftBtn = document.querySelector(".pil-scroll-left-community");
+
+        if (community && rightBtn && leftBtn) {
+          rightBtn.addEventListener("click", () => {
+            community.scrollBy({ left: 300, behavior: "smooth" });
+          });
+
+          leftBtn.addEventListener("click", () => {
+            community.scrollBy({ left: -300, behavior: "smooth" });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
