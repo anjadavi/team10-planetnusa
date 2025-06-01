@@ -149,13 +149,13 @@ body {
 }
 
 .events-header h2 {
-  font-size: 28px;
+  font-size: 38px;
   font-weight: bold;
   margin-bottom: 4px;
 }
 
 .events-header p {
-  font-size: 15px;
+  font-size: 20px;
   margin-bottom: 16px;
 }
 
@@ -163,8 +163,8 @@ body {
   width: 100px;
   margin: 0 auto;
   display: block;
-  margin-left: 77%;
-  margin-top: 0.2%;
+  margin-left: 74%;
+  margin-bottom: 30px;
 }
 
 .events-list {
@@ -246,7 +246,7 @@ body {
 .vertical-line {
   position: absolute;
   top: 16.5%;
-  left: 83.5%;
+  left: 81.5%;
   transform: translateX(-50%);
   width: 2px;
   height: 80%;
@@ -310,13 +310,66 @@ body {
   color: #fd9f28;
 }
 
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  scroll-snap-align: start;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.pil-scroll-community,
+.pil-scroll-left-community {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.pil-scroll-community {
+  right: 25px;
+}
+
+.pil-scroll-left-community {
+  left: 25px;
+}
+
+.pil-scroll-community img,
+.pil-scroll-left-community img {
+  width: 35px;
+  height: 35px;
+}
+
 /* DESKTOP */
 @media (min-width: 768px) {
-  html,
-  body {
-    overflow-x: hidden;
-  }
-
   .hero {
     display: flex;
     flex-direction: row;
@@ -466,14 +519,6 @@ body {
     line-height: 1.6;
   }
 
-  .event-item:nth-child(even) .event-img-container {
-    margin-right: -30px;
-  }
-
-  .event-item:nth-child(even) .event-info {
-    margin-left: -30px;
-  }
-
   .vertical-line {
     left: 50%;
     transform: translateX(-50%);
@@ -487,63 +532,4 @@ body {
     padding: 19px 40px;
     margin-top: 2rem;
   }
-}
-
-.carousel-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  width: 100%;
-  margin: 1rem 0;
-}
-
-.carousel-track {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 1rem;
-  padding: 1rem;
-  scroll-snap-type: x mandatory;
-}
-
-.carousel-item {
-  flex: 0 0 auto;
-  width: 200px;
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
-  scroll-snap-align: start;
-}
-
-.carousel-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-/* Use your existing arrow styles */
-.pil-scroll-community,
-.pil-scroll-left-community {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.pil-scroll-community {
-  right: 25px;
-}
-
-.pil-scroll-left-community {
-  left: 25px;
-}
-
-.pil-scroll-community img,
-.pil-scroll-left-community img {
-  width: 35px;
-  height: 35px;
 }

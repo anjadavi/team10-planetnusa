@@ -71,7 +71,6 @@ h1 {
 
 h2 {
   color: #ffffff;
-  /* font-size: 36px; */
 }
 
 h4 {
@@ -104,17 +103,17 @@ p {
 }
 
 .gronplanet-forside {
-  width: 90px;
+  width: 120px;
   height: auto;
-  padding-top: 50px;
+  padding-top: 15px;
 }
 
 .p-forside {
-  margin-left: 30px;
+  margin-left: 35px;
   margin-right: 80px;
-  padding-top: 20px;
+  padding-top: 40px;
   padding-bottom: 60px;
-  line-height: 2;
+  line-height: 1.7;
 }
 
 /* marathon week */
@@ -207,7 +206,7 @@ p {
   font-size: 15px;
   text-decoration: none;
   border: none;
-  padding: 15px 112.5px 15px 112.5px;
+  padding: 12px 60px;
   cursor: pointer;
   margin: 0 auto;
   display: block;
@@ -273,7 +272,7 @@ p {
   font-size: 15px;
   text-decoration: none;
   border: none;
-  padding: 15px 132.5px 15px 132.5px;
+  padding: 12px 70px;
   cursor: pointer;
   display: block;
   margin: 20px auto;
@@ -290,6 +289,9 @@ p {
   text-align: center;
   margin: 0 auto;
   width: fit-content;
+  font-size: 40px;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .karrusel-community {
@@ -362,18 +364,20 @@ p {
 
   .h1-forside {
     font-size: 100px;
-    margin-top: 250px;
+    margin-top: 290px;
     line-height: 1;
   }
 
   .gronplanet-forside {
     position: absolute;
-    margin-top: 270px;
-    right: 80px;
-    width: 150px;
+    margin-top: 230px;
+    right: 90px;
+    width: 200px;
   }
 
   .p-forside {
+    padding-top: 80px;
+    padding-left: 15px;
     font-size: 22.5px;
     line-height: 2;
     max-width: 1000px;
@@ -406,9 +410,10 @@ p {
   }
 
   .knap-marathon {
-    font-size: 24px;
-    padding: 17.5px 112.5px 17.5px 112.5px;
+    font-size: 20px;
+    padding: 15px 80px;
     transition: background-color 0.3 ease;
+    margin-top: 15px;
   }
 
   /* events */
@@ -473,10 +478,12 @@ p {
   }
 
   .knap-events {
-    font-size: 24px;
-    padding: 17.5px 132.5px 17.5px 132.5px;
-    display: inline-block;
-    margin: 10px 0 0 0;
+    background-color: #dede75;
+    font-size: 18px;
+    text-decoration: none;
+    border: none;
+    padding: 12px 70px;
+    margin-top: 10px;
   }
 
   /* community */

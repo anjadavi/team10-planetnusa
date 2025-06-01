@@ -118,6 +118,11 @@ body {
   margin: 2.5px auto 0 auto;
 }
 
+.div,
+.reverse {
+  margin-bottom: 100px;
+}
+
 @media (min-width: 780px) {
   .hero-section {
     height: 400px;
@@ -156,6 +161,7 @@ body {
     max-width: 1000px;
     margin: 40px auto;
     padding: 0 40px;
+    margin-bottom: 100px;
   }
 
   .div1 {
