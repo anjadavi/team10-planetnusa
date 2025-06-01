@@ -1,0 +1,589 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  gap: 2px;
+  position: relative;
+  overflow: visible;
+}
+
+.hero-img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.hero-h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 35px;
+  text-align: center;
+  z-index: 2;
+  color: #ffffff;
+}
+
+.krusedulle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero {
+  position: relative;
+}
+
+.krusedulle.stor {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+.info-cta-wrapper {
+  position: relative;
+  width: 300px;
+  margin: 1rem;
+  height: 250px;
+}
+
+.krusedulle.lille {
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+  pointer-events: none;
+  margin-top: 80px;
+}
+
+.info-cta {
+  position: absolute;
+  top: 65%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+}
+
+.info-cta h3,
+.info-cta p {
+  margin: 40;
+  line-height: 0.7;
+  white-space: nowrap;
+  font-weight: normal;
+  text-align: center;
+}
+
+/* Marathon info */
+.marathon-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px;
+  gap: 16px;
+}
+
+.info-text {
+  width: 90%;
+}
+
+.info-text h2 {
+  font-size: 20px;
+  color: #fd9f28;
+  margin-bottom: 12px;
+}
+
+.info-text p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #000;
+  margin-bottom: 16px;
+}
+
+.planet-icon1 {
+  width: 150px;
+  height: auto;
+}
+
+.info-cta {
+  width: 40%;
+  text-align: center;
+}
+
+.info-cta h3 {
+  color: #fd9f28;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.info-cta p {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.events-section {
+  background-color: #fd9f28;
+  color: white;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.events-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.events-header h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.events-header p {
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+
+.planet-icon {
+  width: 100px;
+  margin-left: 320px;
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Hele event-delen*/
+.event-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* Cirkel med billede og dato */
+.event-img-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid white;
+}
+
+.event-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fd9f28;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.event-date {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  padding: 2px 6px;
+  color: white;
+  font-weight: normal;
+  text-align: center;
+  z-index: 2;
+}
+
+.event-info {
+  flex: 1;
+}
+
+.event-info h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.event-info p {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: white;
+  line-height: 1.4;
+}
+
+.cta {
+  font-weight: bold;
+  color: white;
+}
+.vertical-line {
+  position: absolute;
+  top: 16.5%;
+  left: 83.5%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 80%;
+  background-color: #ffffff;
+  z-index: 0;
+}
+
+/* SHOP MARATHON */
+.h2-shop {
+  text-align: center;
+  margin: 0 auto;
+  width: fit-content;
+  font-size: 30px;
+  margin-top: 50px;
+  padding-bottom: 10px;
+}
+
+.karrusel-shop {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  gap: 10px;
+  padding-bottom: 40px;
+}
+
+.karrusel-shop::-webkit-scrollbar {
+  display: none;
+}
+
+.karrusel-shop img {
+  flex: 0 0 auto;
+  width: 250px;
+  height: auto;
+  scroll-snap-align: center;
+}
+
+.pil-scroll-shop,
+.pil-scroll-left-shop {
+  display: none;
+}
+
+/* EXPLORE NUSA knap*/
+.explore-btn {
+  display: block;
+  margin: 5px auto; /* auto centrerer vandret */
+  background-color: black;
+  color: white;
+  padding: 16px;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  text-align: center;
+  margin-bottom: 50px;
+  max-width: 70%;
+}
+
+.explore-btn:hover {
+  color: #fd9f28;
+}
+
+/* __________DESKTOP__________ */
+@media (min-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  /* HERO: 2 billeder */
+  .hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+  }
+
+  .hero-img {
+    width: 50%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero-h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 65px;
+    color: white;
+    text-align: center;
+    z-index: 2;
+  }
+  .krusedulle.stor {
+    display: none;
+  }
+
+  .marathon-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 20px;
+    padding-left: 70px;
+    padding-right: 40px;
+  }
+
+  .info-text {
+    width: 60%;
+  }
+
+  .info-text h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+
+  .info-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  .info-cta-wrapper {
+    width: 40%;
+    height: 250px;
+    position: relative;
+  }
+
+  .krusedulle.lille {
+    max-width: 300px;
+    width: 100%;
+    margin-top: -30px;
+    position: absolute;
+    display: block;
+    left: 20%;
+  }
+
+  .info-cta {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+  }
+
+  .info-cta h3 {
+    font-size: 40px;
+    color: #fd9f28;
+    margin-bottom: 15px;
+  }
+
+  .info-cta p {
+    font-size: 35px;
+    font-weight: bold;
+    color: black;
+  }
+
+  /* UPCOMING EVENTS */
+
+  .events-section {
+    padding-top: 400px;
+  }
+
+  .events-header {
+    text-align: center;
+    margin-top: -120px;
+    padding: 0;
+    position: relative;
+    overflow: visible;
+  }
+
+  .events-header {
+    text-align: center;
+    margin-top: -350px; /* <-- dette skubber den opad */
+    padding: 0;
+    position: relative;
+    overflow: visible;
+  }
+
+  .events-header h2 {
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+
+  .events-header p {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .planet-icon {
+    display: none;
+  }
+
+  /* Cirkel med billede og dato */
+  .event-img-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid white;
+  }
+
+  .events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    flex: 1;
+  }
+
+  .events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .event-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+
+  .event-item:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .event-info {
+    width: 45%;
+    max-width: 280px;
+    text-align: left;
+    font-size: 30px;
+    line-height: 1.6;
+  }
+
+  .event-item:nth-child(even) .event-img-container {
+    margin-left: 0;
+    margin-right: -30px;
+  }
+
+  .event-item:nth-child(even) .event-info {
+    margin-left: -30px;
+  }
+
+  .vertical-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 90%;
+    width: 2px;
+    background-color: white;
+    top: 12%;
+    z-index: 0;
+  }
+
+  /* SHOP SECTION */
+
+  .karrusel-wrapper {
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .karrusel-marathon {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 10px;
+    padding-bottom: 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .karrusel-marathon::-webkit-scrollbar {
+    display: none;
+  }
+
+  .karrusel-marathon img {
+    flex: 0 0 auto;
+    width: 300px;
+    height: auto;
+    scroll-snap-align: center;
+  }
+
+  .pil-scroll-shop {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .pil-scroll-left-shop {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    background: none;
+    border: none;
+    padding: 0;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .pil-scroll-shop img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .pil-scroll-left-shop img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .knap-marathon {
+    background-color: #fd9f28;
+    color: #ffffff;
+    font-size: 15px;
+    text-decoration: none;
+    border: none;
+    padding: 15px 112.5px 15px 112.5px;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+    transition: background-color 0.3 ease;
+  }
+
+  .knap-marathon:hover {
+    background-color: #ffffff;
+    color: #fd9f28;
+  }
+
+  .explore-btn {
+    max-width: 30%;
+  }
+}
