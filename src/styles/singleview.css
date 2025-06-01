@@ -151,6 +151,80 @@
   background: #0038a0;
 }
 
+/* CLOTHES SECTION */
+
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 1rem;
+    padding: 1rem 0;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    scrollbar-width: none;
+  }
+
+  .carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 400px; /* Adjust image size here */
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  scroll-snap-align: start;
+}
+
+  .carousel-item img {
+    width: 100%;
+  }
+
+/* Make the arrows overlap the images */
+.carousel-arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 10px;
+  pointer-events: none; 
+}
+
+.pil-scroll-community,
+.pil-scroll-left-community {
+  background: none;
+  border: none;
+  cursor: pointer;
+  pointer-events: all; 
+  z-index: 10;
+}
+
+.pil-scroll-left-community img {
+  transform: rotate(180deg);
+}
+
+
+  .pil-scroll-community img,
+  .pil-scroll-left-community img {
+    width: 35px;
+    height: 35px;
+  }
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .product-page {
@@ -205,65 +279,11 @@
   .button-section {
     width: 100%;
   }
-}
-.carousel-container {
-  position: relative;
-  width: 100%;
-  margin: 2rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.carousel-track {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 1rem;
-  padding: 1rem 0;
-  scroll-snap-type: x mandatory;
-  width: 100%;
-}
+  /* clothes section */
 
-.carousel-item {
-  flex: 0 0 auto;
-  width: 200px;
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
-  scroll-snap-align: start;
-}
-
-.carousel-item img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-/* Arrows under the carousel */
-.carousel-arrows {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
-  width: 120px;
-  gap: 1rem;
-}
-
-.pil-scroll-community,
-.pil-scroll-left-community {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.pil-scroll-community img,
-.pil-scroll-left-community img {
-  width: 35px;
-  height: 35px;
-}
-
-@media (max-width: 768px) {
   .carousel-item {
-    width: 160px;
+    width: 220px;
   }
 
   .pil-scroll-community img,

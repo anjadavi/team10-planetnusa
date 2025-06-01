@@ -15,7 +15,7 @@ const response = await fetch(
       Authorization:
         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1hbm5yamt6bmh6Zm16dGZoY3hqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc2NTE3MTgsImV4cCI6MjA2MzIyNzcxOH0.OO4UXTKIzTWRysicFvCx3ERENDBZ-pBl1vuT8AY-yVg",
     },
-  }
+  },
 );
 
 let products = await response.json();
@@ -112,12 +112,21 @@ if (!product) {
   <main class="product-page">
     <!-- GALLERY -->
     <div class="product-gallery">
-      <img src={product.image} alt={product.name} class="main-image" id="mainImage" />
-    
+      <img
+        src={product.image}
+        alt={product.name}
+        class="main-image"
+        id="mainImage"
+      />
+
       <div class="thumbnails">
         {
           product.thumbnails?.map((thumb: string, index: number) => (
-            <img src={thumb} alt={`${product.name} thumbnail ${index + 1}`} class="thumb" />
+            <img
+              src={thumb}
+              alt={`${product.name} thumbnail ${index + 1}`}
+              class="thumb"
+            />
           ))
         }
       </div>
@@ -162,12 +171,17 @@ if (!product) {
   </main>
 
   <SingleviewCommunity />
+
+  <!-- singleview clothes -->
   <div class="carousel-container">
-    <!-- Scrollable Track -->
     <div class="carousel-track" id="carouselTrack">
       {
-        products.map((product: any) => (
-          <a href={`/singleview?id=${product.id}`} class="carousel-item">
+        products.map((product) => (
+          <a
+            href={`/singleview?id=${product.id}`}
+            class="carousel-item"
+            key={product.id}
+          >
             <img src={product.image} alt={product.name} />
             <p>{product.name}</p>
             <span>{product.price} DKK</span>
@@ -175,125 +189,147 @@ if (!product) {
         ))
       }
     </div>
-  
-    <!-- Arrows placed outside the track -->
+
     <div class="carousel-arrows">
-      <button class="pil-scroll-left-community" onclick="scrollCarousel(-1)">
+      <button
+        class="pil-scroll-left-community"
+        id="scrollLeft"
+        aria-label="Scroll left"
+      >
         <img src="/images/pil.webp" alt="Scroll left" />
       </button>
-      <button class="pil-scroll-community" onclick="scrollCarousel(1)">
+      <button
+        class="pil-scroll-community"
+        id="scrollRight"
+        aria-label="Scroll right"
+      >
         <img src="/images/pil.webp" alt="Scroll right" />
       </button>
     </div>
   </div>
-  
-    <!-- Right Arrow -->
-    <button class="pil-scroll-community" onclick="scrollCarousel(1)">
-      <img src="/images/pil.webp" alt="Scroll right" />
-    </button>
-  </div>
+</body>
 
-  <script type="module">
-    const sizes = document.querySelectorAll(".size-option");
-    const label = document.querySelector(".size-label");
+<!-- FOOTER -->
+<footer class="footer-wrapper">
+  <div class="footer-content">
+    <div class="footer-top">
+      <h2>
+        Community Driven Sportswear
+        <img src="/images/planet-sort.webp" alt="planet" />
+      </h2>
 
-    sizes.forEach((size) => {
-      size.addEventListener("change", (event) => {
-        const selectedSize = event.target.value;
-        console.log(selectedSize);
+      <section class="footer-grid">
+        <div class="footer-left">
+          <h3>Don't Ever Miss Out</h3>
+          <p>
+            Be the first to know about new drops and special offers. Sign up
+            here and get 10% off your first order!
+          </p>
+          <input type="email" placeholder="email@newsletter.com" />
+          <br />
+          <select>
+            <option>Select your country</option>
+            <option>Canada</option>
+            <option>Denmark</option>
+            <option>France</option>
+            <option>Germany</option>
+            <option>Japan</option>
+            <option>Netherlands</option>
+            <option>Singapore</option>
+            <option>South Korea</option>
+            <option>Sweden</option>
+            <option>Switzerland</option>
+          </select>
+        </div>
 
-        if (selectedSize) {
-          label.textContent = `Size: ${selectedSize}`;
-        } else {
-          label.textContent = "Size";
-        }
-      });
-    });
+        <div class="footer-right">
+          <div class="footer-links">
+            <div>
+              <h4>Marathon Week</h4>
+              <ul>
+                <li><a href="/marathon">Breathwork & Bubbles</a></li>
+                <li><a href="/marathon">Nusa run + DJ Loadi</a></li>
+                <li><a href="/marathon">Shake out run</a></li>
+                <li><a href="/marathon">Nusa cheer zone</a></li>
+              </ul>
+            </div>
 
-    const mainImage = document.querySelector(".main-image");
-    const thumbnails = document.querySelectorAll(".thumb");
+            <div>
+              <h4>Apparel</h4>
+              <ul>
+                <li><a href="/listeview">Women</a></li>
+                <li><a href="/listeview">Men</a></li>
+                <li><a href="/listeview">Unisex</a></li>
+              </ul>
+            </div>
 
-    thumbnails.forEach((thumb) => {
-      thumb.addEventListener("click", () => {
-        console.log("meow");
-
-        mainImage.src = thumb.src;
-      });
-    });
-  </script>
-  <footer class="footer-wrapper">
-    <div class="footer-content">
-      <div class="footer-top">
-        <h2>
-          Community Driven Sportswear
-          <img src="/images/planet-sort.webp" alt="planet" />
-        </h2>
-
-        <section class="footer-grid">
-          <div class="footer-left">
-            <h3>Don't Ever Miss Out</h3>
-            <p>
-              Be the first to know about new drops and special offers. Sign up
-              here and get 10% off your first order!
-            </p>
-            <input type="email" placeholder="email@newsletter.com" />
-            <br />
-            <select>
-              <option>Select your country</option>
-              <option>Canada</option>
-              <option>Denmark</option>
-              <option>France</option>
-              <option>Germany</option>
-              <option>Japan</option>
-              <option>Netherlands</option>
-              <option>Singapore</option>
-              <option>South Korea</option>
-              <option>Sweden</option>
-              <option>Switzerland</option>
-            </select>
-          </div>
-
-          <div class="footer-right">
-            <div class="footer-links">
-              <div>
-                <h4>Marathon Week</h4>
-                <ul>
-                  <li><a href="/marathon">Breathwork & Bubbles</a></li>
-                  <li><a href="/marathon">Nusa run + DJ Loadi</a></li>
-                  <li><a href="/marathon">Shake out run</a></li>
-                  <li><a href="/marathon">Nusa cheer zone</a></li>
-                </ul>
-              </div>
-
-              <div>
-                <h4>Apparel</h4>
-                <ul>
-                  <li><a href="/listeview">Women</a></li>
-                  <li><a href="/listeview">Men</a></li>
-                  <li><a href="/listeview">Unisex</a></li>
-                </ul>
-              </div>
-
-              <div>
-                <h4>Events</h4>
-                <ul>
-                  <li><a href="/nusabootcamp">Nusa Bootcamp</a></li>
-                  <li><a href="/nusaruns">Nusa Runs</a></li>
-                  <li><a href="/nusaswims">Nusa Swims</a></li>
-                  <li><a href="/nusatalks">Nusa Talks</a></li>
-                </ul>
-              </div>
+            <div>
+              <h4>Events</h4>
+              <ul>
+                <li><a href="/nusabootcamp">Nusa Bootcamp</a></li>
+                <li><a href="/nusaruns">Nusa Runs</a></li>
+                <li><a href="/nusaswims">Nusa Swims</a></li>
+                <li><a href="/nusatalks">Nusa Talks</a></li>
+              </ul>
             </div>
           </div>
-        </section>
-      </div>
-
-      <div class="footer-bottom">
-        <div class="socials">
-          <a href="#"><img src="/images/facebook-sort.webp" alt="Facebook" /></a>
-          <a href="#"><img src="/images/instagram-sort.webp" alt="Instagram" /></a>
         </div>
+      </section>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="socials">
+        <a href="#"><img src="/images/facebook-sort.webp" alt="Facebook" /></a>
+        <a href="#"><img src="/images/instagram-sort.webp" alt="Instagram" /></a
+        >
       </div>
     </div>
-  </footer>
-</body>
+  </div>
+</footer>
+
+<script type="module">
+  const sizes = document.querySelectorAll(".size-option");
+  const label = document.querySelector(".size-label");
+
+  sizes.forEach((size) => {
+    size.addEventListener("change", (event) => {
+      const selectedSize = event.target.value;
+      console.log(selectedSize);
+
+      if (selectedSize) {
+        label.textContent = `Size: ${selectedSize}`;
+      } else {
+        label.textContent = "Size";
+      }
+    });
+  });
+
+  const mainImage = document.querySelector(".main-image");
+  const thumbnails = document.querySelectorAll(".thumb");
+
+  thumbnails.forEach((thumb) => {
+    thumb.addEventListener("click", () => {
+      console.log("meow");
+
+      mainImage.src = thumb.src;
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const track = document.getElementById("carouselTrack");
+    const btnLeft = document.getElementById("scrollLeft");
+    const btnRight = document.getElementById("scrollRight");
+
+    if (!track || !btnLeft || !btnRight) return;
+
+    const scrollAmount = 220; // Adjust to match your item width + gap
+
+    btnRight.addEventListener("click", () => {
+      track.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    });
+
+    btnLeft.addEventListener("click", () => {
+      track.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    });
+  });
+</script>
