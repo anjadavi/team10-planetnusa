@@ -11,7 +11,7 @@ const response = await fetch(
       Authorization:
         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1hbm5yamt6bmh6Zm16dGZoY3hqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc2NTE3MTgsImV4cCI6MjA2MzIyNzcxOH0.OO4UXTKIzTWRysicFvCx3ERENDBZ-pBl1vuT8AY-yVg",
     },
-  }
+  },
 );
 
 let products = await response.json();
@@ -36,10 +36,9 @@ if (!product) {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>Marathon Week</title>
     <link rel="stylesheet" href="/marathon.css" />
-
-    <link rel="stylesheet" href="/src/styles/style.css" />
+    <link rel="stylesheet" href="../public/style.css" />
   </head>
   <body>
     <head>
@@ -262,35 +261,41 @@ if (!product) {
         </section>
         <!--  lukket orange sektion -->
 
- <!-- Karousel sektion -->
-<section>
-  <h2 class="h2-shop">SHOP MARATHON APPAREL</h2>
+        <!-- Karousel sektion -->
+        <section>
+          <h2 class="h2-shop">SHOP MARATHON APPAREL</h2>
 
-  <div class="carousel-container">
-    <!-- Left Arrow -->
-    <button class="pil-scroll-left-community" onclick="scrollCarousel(-1)">
-      <img src="/images/pil.webp" alt="Scroll left" />
-    </button>
+          <div class="carousel-container">
+            <!-- Left Arrow -->
+            <button
+              class="pil-scroll-left-community"
+              onclick="scrollCarousel(-1)"
+            >
+              <img src="/images/pil.webp" alt="Scroll left" />
+            </button>
 
-    <!-- Scrollable Track -->
-    <div class="carousel-track" id="carouselTrack">
-      {
-        products.map((product: any) => (
-          <a href={`/singleview?id=${product.id}`} class="carousel-item">
-            <img src={product.image} alt={product.name} />
-            <p>{product.name}</p>
-            <span>{product.price} DKK</span>
-          </a>
-        ))
-      }
-    </div>
+            <!-- Scrollable Track -->
+            <div class="carousel-track" id="carouselTrack">
+              {
+                products.map((product: any) => (
+                  <a
+                    href={`/singleview?id=${product.id}`}
+                    class="carousel-item"
+                  >
+                    <img src={product.image} alt={product.name} />
+                    <p>{product.name}</p>
+                    <span>{product.price} DKK</span>
+                  </a>
+                ))
+              }
+            </div>
 
-    <!-- Right Arrow -->
-    <button class="pil-scroll-community" onclick="scrollCarousel(1)">
-      <img src="/images/pil.webp" alt="Scroll right" />
-    </button>
-  </div>
-</section>
+            <!-- Right Arrow -->
+            <button class="pil-scroll-community" onclick="scrollCarousel(1)">
+              <img src="/images/pil.webp" alt="Scroll right" />
+            </button>
+          </div>
+        </section>
 
         <a href="/listeview" class="explore-btn">EXPLORE NUSA MARATHON NOW</a>
       </main>
@@ -376,7 +381,5 @@ if (!product) {
       </div>
     </footer>
     <!-- JavaScript til karousellen -->
-
-
   </body>
 </html>
