@@ -76,8 +76,8 @@ body {
 
 .info-cta {
   position: absolute;
-  top: 80%;
-  left: 28%;
+  top: 75%;
+  left: 38%;
   transform: translate(-50%, -50%);
   z-index: 2;
   text-align: center;
@@ -260,7 +260,7 @@ body {
   margin: 0 auto;
   width: fit-content;
   font-size: 30px;
-  margin-top: 50px;
+  margin-top: 80px;
   padding-bottom: 10px;
 }
 
@@ -340,7 +340,6 @@ body {
 .carousel-item img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
 }
 
 .pil-scroll-community,
@@ -360,6 +359,82 @@ body {
 
 .pil-scroll-left-community {
   left: 25px;
+}
+
+.pil-scroll-community img,
+.pil-scroll-left-community img {
+  width: 35px;
+  height: 35px;
+}
+
+/* CLOTHES SECTION */
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-container h2 {
+  font-size: 40px;
+}
+
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 400px; /* Adjust image size here */
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  scroll-snap-align: start;
+}
+
+.carousel-item img {
+  width: 100%;
+}
+
+/* Make the arrows overlap the images */
+.carousel-arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 10px;
+  pointer-events: none;
+}
+
+.pil-scroll-community,
+.pil-scroll-left-community {
+  background: none;
+  border: none;
+  cursor: pointer;
+  pointer-events: all;
+  z-index: 10;
+}
+
+.pil-scroll-left-community img {
+  transform: rotate(180deg);
 }
 
 .pil-scroll-community img,
@@ -459,7 +534,7 @@ body {
   }
 
   .events-wrapper {
-    padding-top: 150px;
+    padding-top: 70px;
     padding-bottom: 50px;
   }
   .events-header {
@@ -522,7 +597,7 @@ body {
   .vertical-line {
     left: 50%;
     transform: translateX(-50%);
-    height: 95%;
+    height: 90%;
     top: 12%;
   }
 

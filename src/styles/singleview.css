@@ -1,4 +1,8 @@
 /* Layout */
+body {
+  font-family: "FuturaPT", sans-serif;
+}
+
 .product-page {
   display: flex;
   gap: 3rem;
@@ -60,6 +64,7 @@
   list-style: none;
   padding: 0;
   margin-top: 30px;
+  font-family: "FuturaPT", sans-serif;
 }
 
 .description-list li {
@@ -69,6 +74,7 @@
 /* Size Selection */
 .sizes {
   margin-bottom: 24px;
+  font-family: "FuturaPT", sans-serif;
 }
 
 .size-label {
@@ -82,6 +88,7 @@
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  font-family: "FuturaPT", sans-serif;
 }
 
 .size-option {
@@ -121,6 +128,7 @@
   display: flex;
   flex-direction: column;
   gap: 0;
+  font-family: "FuturaPT", sans-serif;
 }
 
 .add-to-bag,
@@ -153,29 +161,33 @@
 
 /* CLOTHES SECTION */
 
-  .carousel-container {
-    position: relative;
-    width: 100%;
-    margin: 2rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.carousel-container {
+  position: relative;
+  width: 100%;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .carousel-track {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    gap: 1rem;
-    padding: 1rem 0;
-    scroll-snap-type: x mandatory;
-    width: 100%;
-    scrollbar-width: none;
-  }
+.carousel-container h2 {
+  font-size: 40px;
+}
 
-  .carousel-track::-webkit-scrollbar {
-    display: none;
-  }
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
 
 .carousel-item {
   flex: 0 0 auto;
@@ -186,9 +198,9 @@
   scroll-snap-align: start;
 }
 
-  .carousel-item img {
-    width: 100%;
-  }
+.carousel-item img {
+  width: 100%;
+}
 
 /* Make the arrows overlap the images */
 .carousel-arrows {
@@ -201,7 +213,7 @@
   justify-content: space-between;
   transform: translateY(-50%);
   padding: 0 10px;
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 .pil-scroll-community,
@@ -209,7 +221,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  pointer-events: all; 
+  pointer-events: all;
   z-index: 10;
 }
 
@@ -217,13 +229,11 @@
   transform: rotate(180deg);
 }
 
-
-  .pil-scroll-community img,
-  .pil-scroll-left-community img {
-    width: 35px;
-    height: 35px;
-  }
-
+.pil-scroll-community img,
+.pil-scroll-left-community img {
+  width: 35px;
+  height: 35px;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -284,6 +294,9 @@
 
   .carousel-item {
     width: 220px;
+  }
+  .carousel-container h2 {
+    font-size: 30px;
   }
 
   .pil-scroll-community img,
