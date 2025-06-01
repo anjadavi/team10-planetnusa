@@ -10,7 +10,6 @@ body {
 .h2-events {
   color: #dde475;
   font-size: 36px;
-}
   color: #dde475;
   font-size: 36px;
 }
@@ -26,7 +25,7 @@ body {
 }
 
 .hero-section {
-  background-image: url("/images/nusaruns.jpg");
+  background-image: url("/images/nusa-runs.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -38,7 +37,7 @@ body {
 }
 
 .hero-section-bootcamp {
-  background-image: url("/images/nusabootcamphero.jpg");
+  background-image: url("/images/nusabootcamphero.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -50,7 +49,7 @@ body {
 }
 
 .hero-section-swims {
-  background-image: url("/images/nusaswimshero.jpg");
+  background-image: url("/images/nusaswimshero.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

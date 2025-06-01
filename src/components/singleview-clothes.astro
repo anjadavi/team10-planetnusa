@@ -1,55 +1,102 @@
-<div class="clothes-container">
-  <h3>You may also like</h3>
-  <div class="clothes">
-    <img class="image" src="/test.jpg" alt="Product 1" />
-    <img class="image" src="/test.jpg" alt="Product 2" />
-    <img class="image" src="/test.jpg" alt="Product 3" />
-    <img class="image" src="/test.jpg" alt="Product 4" />
+---
+const { products } = Astro.props;
+---
+<div class="carousel-container">
+  <!-- Scrollable Track -->
+  <div class="carousel-track" id="carouselTrack">
+    {
+      products.map((product: any) => (
+        <a href={`/singleview?id=${product.id}`} class="carousel-item">
+          <img src={product.image} alt={product.name} />
+          <p>{product.name}</p>
+          <span>{product.price} DKK</span>
+        </a>
+      ))
+    }
+  </div>
+
+  <!-- Arrows placed outside the track -->
+  <div class="carousel-arrows">
+    <button class="pil-scroll-left-community" onclick="scrollCarousel(-1)">
+      <img src="/images/pil.png" alt="Scroll left" />
+    </button>
+    <button class="pil-scroll-community" onclick="scrollCarousel(1)">
+      <img src="/images/pil.png" alt="Scroll right" />
+    </button>
   </div>
 </div>
 
+  <!-- Right Arrow -->
+  <button class="pil-scroll-community" onclick="scrollCarousel(1)">
+    <img src="/images/pil.png" alt="Scroll right" />
+  </button>
+</div>
+
 <style>
-  .clothes-container {
-    width: 100%;
-    margin: 2rem auto;
-    text-align: center;
+  .carousel-container {
+  position: relative;
+  width: 100%;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  scroll-snap-align: start;
+}
+
+.carousel-item img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Arrows under the carousel */
+.carousel-arrows {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 120px;
+  gap: 1rem;
+}
+
+.pil-scroll-community,
+.pil-scroll-left-community {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.pil-scroll-community img,
+.pil-scroll-left-community img {
+  width: 35px;
+  height: 35px;
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    width: 160px;
   }
 
-  .clothes-container h3 {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+  .pil-scroll-community img,
+  .pil-scroll-left-community img {
+    width: 30px;
+    height: 30px;
   }
-
-  .clothes {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-
-  .image {
-    width: 100%;
-    max-width: 23%;
-    aspect-ratio: 347.37 / 490;
-    object-fit: cover;
-    cursor: pointer;
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
-  }
-
-  .image:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  }
-
-  @media (max-width: 768px) {
-    .image {
-      max-width: 47%;
-    }
-
-    .clothes .image:nth-child(n + 3) {
-      display: none;
-    }
-  }
+}
 </style>
