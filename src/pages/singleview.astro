@@ -54,17 +54,17 @@ if (!product) {
     <nav class="site-nav">
       <div class="nav-left">
         <img
-          src="/images/menu-sort.png"
+          src="/images/menu-sort.webp"
           alt="Menu"
           id="menuToggle"
           class="burger"
         />
-        <img src="/images/søg-sort.png" alt="Søg" class="søg-icon" />
+        <img src="/images/søg-sort.webp" alt="Søg" class="søg-icon" />
       </div>
 
       <div class="nav-logo">
         <a href="/">
-          <img src="/images/logo.png" alt="Planet Nusa Logo" />
+          <img src="/images/logo.webp" alt="Planet Nusa Logo" />
         </a>
       </div>
 
@@ -78,9 +78,9 @@ if (!product) {
       </div>
 
       <div class="nav-right">
-        <img src="/images/søg-sort.png" alt="Søg" class="søg-desktop" />
-        <img src="/images/profil-sort.png" alt="Profil" />
-        <img src="/images/kurv-sort.png" alt="Kurv" />
+        <img src="/images/søg-sort.webp" alt="Søg" class="søg-desktop" />
+        <img src="/images/profil-sort.webp" alt="Profil" />
+        <img src="/images/kurv-sort.webp" alt="Kurv" />
       </div>
     </nav>
 
@@ -112,11 +112,14 @@ if (!product) {
   <main class="product-page">
     <!-- GALLERY -->
     <div class="product-gallery">
-      <img src={product.image} alt={product.name} class="main-image" />
+      <img src={product.image} alt={product.name} class="main-image" id="mainImage" />
+    
       <div class="thumbnails">
-        <img src="/test.jpg" alt="ZIP1 HOODIE" class="thumb" />
-        <img src="/test2.jpg" alt="ZIP1 HOODIE" class="thumb" />
-        <img src="/test3.jpg" alt="ZIP1 HOODIE" class="thumb" />
+        {
+          product.thumbnails?.map((thumb: string, index: number) => (
+            <img src={thumb} alt={`${product.name} thumbnail ${index + 1}`} class="thumb" />
+          ))
+        }
       </div>
     </div>
 
@@ -159,8 +162,36 @@ if (!product) {
   </main>
 
   <SingleviewCommunity />
-
-  <SingleviewClothes />
+  <div class="carousel-container">
+    <!-- Scrollable Track -->
+    <div class="carousel-track" id="carouselTrack">
+      {
+        products.map((product: any) => (
+          <a href={`/singleview?id=${product.id}`} class="carousel-item">
+            <img src={product.image} alt={product.name} />
+            <p>{product.name}</p>
+            <span>{product.price} DKK</span>
+          </a>
+        ))
+      }
+    </div>
+  
+    <!-- Arrows placed outside the track -->
+    <div class="carousel-arrows">
+      <button class="pil-scroll-left-community" onclick="scrollCarousel(-1)">
+        <img src="/images/pil.webp" alt="Scroll left" />
+      </button>
+      <button class="pil-scroll-community" onclick="scrollCarousel(1)">
+        <img src="/images/pil.webp" alt="Scroll right" />
+      </button>
+    </div>
+  </div>
+  
+    <!-- Right Arrow -->
+    <button class="pil-scroll-community" onclick="scrollCarousel(1)">
+      <img src="/images/pil.webp" alt="Scroll right" />
+    </button>
+  </div>
 
   <script type="module">
     const sizes = document.querySelectorAll(".size-option");
@@ -195,7 +226,7 @@ if (!product) {
       <div class="footer-top">
         <h2>
           Community Driven Sportswear
-          <img src="/images/planet-sort.png" alt="planet" />
+          <img src="/images/planet-sort.webp" alt="planet" />
         </h2>
 
         <section class="footer-grid">
@@ -259,8 +290,8 @@ if (!product) {
 
       <div class="footer-bottom">
         <div class="socials">
-          <a href="#"><img src="/images/facebook-sort.png" alt="Facebook" /></a>
-          <a href="#"><img src="/images/instagram-sort.png" alt="Instagram" /></a>
+          <a href="#"><img src="/images/facebook-sort.webp" alt="Facebook" /></a>
+          <a href="#"><img src="/images/instagram-sort.webp" alt="Instagram" /></a>
         </div>
       </div>
     </div>
