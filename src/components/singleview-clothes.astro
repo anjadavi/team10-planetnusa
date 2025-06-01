@@ -1,6 +1,7 @@
 ---
 const { products } = Astro.props;
 ---
+
 <div class="carousel-container">
   <!-- Scrollable Track -->
   <div class="carousel-track" id="carouselTrack">
@@ -26,77 +27,76 @@ const { products } = Astro.props;
   </div>
 </div>
 
-  <!-- Right Arrow -->
-  <button class="pil-scroll-community" onclick="scrollCarousel(1)">
-    <img src="/images/pil.png" alt="Scroll right" />
-  </button>
-</div>
+<!-- Right Arrow -->
+<button class="pil-scroll-community" onclick="scrollCarousel(1)">
+  <img src="/images/pil.png" alt="Scroll right" />
+</button>
 
 <style>
   .carousel-container {
-  position: relative;
-  width: 100%;
-  margin: 2rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    position: relative;
+    width: 100%;
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.carousel-track {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 1rem;
-  padding: 1rem 0;
-  scroll-snap-type: x mandatory;
-  width: 100%;
-}
+  .carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 1rem;
+    padding: 1rem 0;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+  }
 
-.carousel-item {
-  flex: 0 0 auto;
-  width: 200px;
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
-  scroll-snap-align: start;
-}
-
-.carousel-item img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-/* Arrows under the carousel */
-.carousel-arrows {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
-  width: 120px;
-  gap: 1rem;
-}
-
-.pil-scroll-community,
-.pil-scroll-left-community {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.pil-scroll-community img,
-.pil-scroll-left-community img {
-  width: 35px;
-  height: 35px;
-}
-
-@media (max-width: 768px) {
   .carousel-item {
-    width: 160px;
+    flex: 0 0 auto;
+    width: 200px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    scroll-snap-align: start;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  /* Arrows under the carousel */
+  .carousel-arrows {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+    gap: 1rem;
+  }
+
+  .pil-scroll-community,
+  .pil-scroll-left-community {
+    background: none;
+    border: none;
+    cursor: pointer;
   }
 
   .pil-scroll-community img,
   .pil-scroll-left-community img {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
   }
-}
+
+  @media (max-width: 768px) {
+    .carousel-item {
+      width: 160px;
+    }
+
+    .pil-scroll-community img,
+    .pil-scroll-left-community img {
+      width: 30px;
+      height: 30px;
+    }
+  }
 </style>

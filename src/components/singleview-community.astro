@@ -27,6 +27,15 @@
   width: fit-content;
 }
 
+.karrusel-wrapper {
+  position: relative; 
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
 .karrusel-community {
   display: flex;
   overflow-x: auto;
@@ -34,7 +43,8 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
   gap: 10px;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
+  scroll-behavior: smooth; 
 }
 
 .karrusel-community::-webkit-scrollbar {
@@ -48,9 +58,9 @@
   scroll-snap-align: center;
 }
 
-.pil-scroll-community {
+.pil-scroll-community,
+.pil-scroll-left-community {
   position: absolute;
-  right: 10px;
   top: 50%;
   transform: translateY(-50%);
   background: none;
@@ -64,7 +74,6 @@
   position: absolute;
   left: 10px;
   top: 50%;
-  transform: translateY(-50%) rotate(180deg);
   background: none;
   border: none;
   padding: 0;
@@ -72,11 +81,12 @@
   cursor: pointer;
 }
 
-.pil-scroll-community img {
-  width: 30px;
-  height: 30px;
+.pil-scroll-left-community img {
+  transform: rotate(180deg); 
 }
 
+
+.pil-scroll-community img,
 .pil-scroll-left-community img {
   width: 30px;
   height: 30px;
