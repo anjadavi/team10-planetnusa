@@ -1,6 +1,7 @@
 ---
 const { searchParams } = new URL(Astro.request.url);
 const id = Number(searchParams.get("id"));
+import "../public/style.css";
 
 const response = await fetch(
   "https://mannrjkznhzfmztfhcxj.supabase.co/rest/v1/Marathon_apparel?select=*",

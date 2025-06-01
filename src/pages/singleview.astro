@@ -2,6 +2,7 @@
 import SingleviewCommunity from "../components/singleview-community.astro";
 import SingleviewClothes from "../components/singleview-clothes.astro";
 import "../styles/singleview.css";
+import "../public/style.css";
 
 const { searchParams } = new URL(Astro.request.url);
 const id = Number(searchParams.get("id"));
