@@ -245,42 +245,45 @@ if (!product) {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <!--  lukket orange sektion -->
 
-      <!-- Karousel sektion -->
-      <section>
-        <h2 class="h2-shop">SHOP MARATHON APPAREL</h2>
+</section>
+        <!--  lukket orange sektion -->
 
-        <div class="carousel-container">
-          <!-- Left Arrow -->
-          <button
-            class="pil-scroll-left-community"
-            onclick="scrollCarousel(-1)"
-          >
-            <img src="/images/pil.webp" alt="Scroll left" />
-          </button>
+        <!-- Karousel sektion -->
+        <section>
+          <h2 class="h2-shop">SHOP MARATHON APPAREL</h2>
 
-          <!-- Scrollable Track -->
-          <div class="carousel-track" id="carouselTrack">
-            {
-              products.map((product: any) => (
-                <a href={`/singleview?id=${product.id}`} class="carousel-item">
-                  <img src={product.image} alt={product.name} />
-                  <p>{product.name}</p>
-                  <span>{product.price} DKK</span>
-                </a>
-              ))
-            }
+          <div class="carousel-container">
+            <!-- Left Arrow -->
+            <button
+              class="pil-scroll-left-community"
+              onclick="scrollCarousel(-1)"
+            >
+              <img src="/images/pil.webp" alt="Scroll left" />
+            </button>
+
+            <!-- Scrollable Track -->
+            <div class="carousel-track" id="carouselTrack">
+              {
+                products.map((product: any) => (
+                  <a
+                    href={`/singleview?id=${product.id}`}
+                    class="carousel-item"
+                  >
+                    <img src={product.image} alt={product.name} />
+                    <p>{product.name}</p>
+                    <span>{product.price} DKK</span>
+                  </a>
+                ))
+              }
+            </div>
+
+            <!-- Right Arrow -->
+            <button class="pil-scroll-community" onclick="scrollCarousel(1)">
+              <img src="/images/pil.webp" alt="Scroll right" />
+            </button>
           </div>
-
-          <!-- Right Arrow -->
-          <button class="pil-scroll-community" onclick="scrollCarousel(1)">
-            <img src="/images/pil.webp" alt="Scroll right" />
-          </button>
-        </div>
-      </section>
+        </section>
 
       <a href="/listeview" class="explore-btn">EXPLORE NUSA MARATHON NOW</a>
     </main>
@@ -353,6 +356,11 @@ if (!product) {
         </section>
       </div>
 
+    </footer>
+    <!-- JavaScript til karousellen -->
+  </body>
+=======
+
       <div class="footer-bottom">
         <div class="socials">
           <a href="#"><img src="/images/facebook-sort.webp" alt="Facebook" /></a
@@ -365,4 +373,5 @@ if (!product) {
     </div>
   </footer>
   <!-- JavaScript til karousellen -->
+
 </html>
