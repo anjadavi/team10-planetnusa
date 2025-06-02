@@ -38,16 +38,9 @@ if (!product) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Singleview</title>
-  <link rel="stylesheet" href="/src/styles/style.css" />
+  <link rel="stylesheet" href="/style.css" />
 </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Listevisning</title>
-  <link rel="stylesheet" href="/listeview.css" />
-  <link rel="stylesheet" href="/src/styles/style.css" />
-</head>
 <body>
   <!-- HEADER -->
   <header class="site-header">
@@ -178,11 +171,7 @@ if (!product) {
     <div class="carousel-track" id="carouselTrack">
       {
         products.map((product) => (
-          <a
-            href={`/singleview?id=${product.id}`}
-            class="carousel-item"
-            key={product.id}
-          >
+          <a href={`/singleview?id=${product.id}`} class="carousel-item">
             <img src={product.image} alt={product.name} />
             <p>{product.name}</p>
             <span>{product.price} DKK</span>
@@ -191,7 +180,6 @@ if (!product) {
       }
     </div>
 
-  
     <div class="carousel-arrows">
       <button
         class="pil-scroll-left-community"

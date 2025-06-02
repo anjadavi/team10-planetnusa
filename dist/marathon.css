@@ -1,0 +1,610 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Futura", sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+  box-sizing: border-box;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  gap: 4px;
+  padding: 6px;
+  position: relative;
+  overflow: visible;
+}
+
+/* HERO billeder */
+.hero-img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  z-index: 0;
+}
+
+/* Overskrift ovenpå billeder */
+.hero-heading,
+.hero-h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  font-family: "Futura", sans-serif;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Kruseduller generelt */
+.krusedulle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero {
+  position: relative;
+}
+
+.krusedulle.stor {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  stroke-width: 4;
+}
+
+.info-cta-wrapper {
+  position: relative;
+  width: 300px;
+  margin: 1rem;
+  height: 250px;
+}
+
+.krusedulle.lille {
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+  pointer-events: none;
+  margin-top: 110px;
+}
+
+.info-cta {
+  position: absolute;
+  top: 75%;
+  left: 38%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  width: 40%;
+}
+
+.info-cta h3,
+.info-cta p {
+  margin: 40;
+  white-space: nowrap;
+  font-weight: normal;
+  text-align: center;
+}
+
+.info-cta h3 {
+  color: #fd9f28;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.info-cta p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  line-height: 0.3;
+}
+
+/* Marathon info */
+.marathon-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px;
+  gap: 16px;
+}
+
+.info-text {
+  width: 90%;
+}
+
+.info-text h2 {
+  font-size: 1.2rem;
+  color: #fd9f28;
+  margin-bottom: 12px;
+}
+
+.info-text p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #000;
+  margin-bottom: 16px;
+}
+
+.planet-icon1 {
+  width: 150px;
+  height: auto;
+}
+
+.events-section {
+  background-color: #fd9f28;
+  color: white;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.events-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.events-header h2 {
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.events-header p {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.planet-icon {
+  width: 100px;
+  margin: 0 auto;
+  display: block;
+  margin-left: 74%;
+  margin-bottom: 30px;
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.event-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.event-img-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid white;
+}
+
+.event-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fd9f28;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.event-date {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  padding: 2px 6px;
+  color: white;
+  font-weight: normal;
+  text-align: center;
+  z-index: 2;
+}
+
+.event-info {
+  flex: 1;
+}
+
+.event-info h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.event-info p {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: white;
+  line-height: 1.4;
+}
+
+.cta {
+  font-weight: bold;
+  color: white;
+}
+
+.vertical-line {
+  position: absolute;
+  top: 16.5%;
+  left: 81.5%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 80%;
+  background-color: #ffffff;
+  z-index: 0;
+}
+
+/* SHOP MARATHON */
+.h2-shop {
+  text-align: center;
+  margin: 0 auto;
+  width: fit-content;
+  font-size: 30px;
+  margin-top: 80px;
+  padding-bottom: 10px;
+}
+
+.karrusel-shop {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  gap: 10px;
+  padding-bottom: 40px;
+}
+
+.karrusel-shop::-webkit-scrollbar {
+  display: none;
+}
+
+.karrusel-shop img {
+  flex: 0 0 auto;
+  width: 250px;
+  height: auto;
+  scroll-snap-align: center;
+}
+
+.pil-scroll-shop,
+.pil-scroll-left-shop {
+  display: none;
+}
+
+/* EXPLORE NUSA knap */
+.explore-btn {
+  display: block;
+  margin: 5px auto;
+  background-color: black;
+  color: white;
+  padding: 16px;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  text-align: center;
+  margin-bottom: 50px;
+  max-width: 70%;
+}
+
+.explore-btn:hover {
+  color: #fd9f28;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  scroll-snap-align: start;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+}
+
+.pil-scroll-community,
+.pil-scroll-left-community {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.pil-scroll-community {
+  right: 25px;
+}
+
+.pil-scroll-left-community {
+  left: 25px;
+}
+
+.pil-scroll-community img,
+.pil-scroll-left-community img {
+  width: 35px;
+  height: 35px;
+}
+
+/* CLOTHES SECTION */
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-container h2 {
+  font-size: 40px;
+}
+
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 400px; /* Adjust image size here */
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  scroll-snap-align: start;
+}
+
+.carousel-item img {
+  width: 100%;
+}
+
+/* Make the arrows overlap the images */
+.carousel-arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 10px;
+  pointer-events: none;
+}
+
+.pil-scroll-community,
+.pil-scroll-left-community {
+  background: none;
+  border: none;
+  cursor: pointer;
+  pointer-events: all;
+  z-index: 10;
+}
+
+.pil-scroll-left-community img {
+  transform: rotate(180deg);
+}
+
+.pil-scroll-community img,
+.pil-scroll-left-community img {
+  width: 35px;
+  height: 35px;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+  .hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0;
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .hero-img {
+    width: 50%;
+    height: 500px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero-heading,
+  .hero-h1 {
+    font-size: 4rem;
+  }
+
+  .krusedulle.stor {
+    display: none;
+  }
+
+  .marathon-info {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 70px;
+  }
+
+  .info-text {
+    width: 60%;
+  }
+
+  .info-text h2 {
+    font-size: 45px;
+    margin-bottom: 20px;
+  }
+
+  .info-text p {
+    font-size: 26px;
+    line-height: 1.7;
+  }
+
+  .info-cta-wrapper {
+    width: 40%;
+    height: 250px;
+    position: relative;
+  }
+
+  .krusedulle.lille {
+    max-width: 300px;
+    width: 100%;
+    margin-top: -30px;
+    position: absolute;
+    display: block;
+    left: 20%;
+  }
+
+  .info-cta {
+    top: 45%;
+    left: 50%;
+  }
+
+  .info-cta h3 {
+    font-size: 50px;
+    color: #fd9f28;
+    margin-bottom: 10px;
+  }
+
+  .info-cta p {
+    font-size: 36px;
+    text-align: center;
+    color: black;
+  }
+
+  .events-section {
+    padding-top: 150px;
+  }
+
+  .events-wrapper {
+    padding-top: 70px;
+    padding-bottom: 50px;
+  }
+  .events-header {
+    text-align: center;
+    margin-top: -120px;
+    padding: 0;
+    position: relative;
+    overflow: visible;
+  }
+
+  .events-header h2 {
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+
+  .events-header p {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .planet-icon {
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: auto;
+    z-index: 100;
+  }
+
+  .event-img-container {
+    width: 250px;
+    height: 250px;
+  }
+
+  .events-list {
+    gap: 60px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .event-item {
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+
+  .event-item:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .event-info {
+    width: 90%;
+    max-width: 280px;
+    text-align: left;
+    font-size: 50px;
+    line-height: 1.6;
+  }
+
+  .vertical-line {
+    left: 50%;
+    transform: translateX(-50%);
+    height: 90%;
+    top: 12%;
+  }
+
+  .explore-btn {
+    max-width: 30%;
+    font-size: 1rem;
+    padding: 19px 40px;
+    margin-top: 2rem;
+  }
+}
